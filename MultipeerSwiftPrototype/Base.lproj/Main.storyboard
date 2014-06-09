@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6162" systemVersion="14A238h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6160"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="MultipeerSwiftPrototype" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +15,87 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzm-f4-dWH">
+                                <rect key="frame" x="47" y="45" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arthritic Purple Monkey" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4r0-Wt-QEG">
+                                <rect key="frame" x="47" y="74" width="180" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connected to:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8g-MF-mmn">
+                                <rect key="frame" x="47" y="127" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lively Blue Elephant" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYH-sE-PVl">
+                                <rect key="frame" x="47" y="156" width="155" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your friend press their button:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDd-y5-ZbC">
+                                <rect key="frame" x="47" y="215" width="228" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X times" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHI-L9-iSr">
+                                <rect key="frame" x="47" y="244" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdB-rw-d7E">
+                                <rect key="frame" x="20" y="315" width="268" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="268" id="da6-2p-3Xo"/>
+                                    <constraint firstAttribute="height" constant="120" id="ggU-Dx-FXK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                <state key="normal" title="PRESS THIS">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="26" y="309" width="268" height="280"/>
+                                </variation>
+                                <connections>
+                                    <action selector="incrementCounterAndSend:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Q1Q-6C-1sp"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gzm-f4-dWH" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="47" id="5J1-Gx-JVA"/>
+                            <constraint firstItem="gdB-rw-d7E" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="A94-LB-bAK"/>
+                            <constraint firstItem="jDd-y5-ZbC" firstAttribute="top" secondItem="SYH-sE-PVl" secondAttribute="bottom" constant="38" id="Ae7-fb-qIY"/>
+                            <constraint firstItem="p8g-MF-mmn" firstAttribute="top" secondItem="4r0-Wt-QEG" secondAttribute="bottom" constant="32" id="FdD-cJ-GZX"/>
+                            <constraint firstItem="Gzm-f4-dWH" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="25" id="VwS-2e-gZh"/>
+                            <constraint firstItem="p8g-MF-mmn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="47" id="ZWH-mM-jb2"/>
+                            <constraint firstItem="jDd-y5-ZbC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="47" id="aYO-H6-GfD"/>
+                            <constraint firstItem="jHI-L9-iSr" firstAttribute="top" secondItem="jDd-y5-ZbC" secondAttribute="bottom" constant="8" id="dCY-MT-cIs"/>
+                            <constraint firstItem="gdB-rw-d7E" firstAttribute="top" secondItem="jHI-L9-iSr" secondAttribute="bottom" constant="50" id="eQc-my-oyD"/>
+                            <constraint firstItem="SYH-sE-PVl" firstAttribute="top" secondItem="p8g-MF-mmn" secondAttribute="bottom" constant="8" id="hhW-qC-3vj"/>
+                            <constraint firstItem="SYH-sE-PVl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="47" id="lkL-cd-vB4"/>
+                            <constraint firstItem="4r0-Wt-QEG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="47" id="pCe-GX-nxC"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="gdB-rw-d7E" secondAttribute="bottom" constant="45" id="rZT-iy-wzi"/>
+                            <constraint firstItem="4r0-Wt-QEG" firstAttribute="top" secondItem="Gzm-f4-dWH" secondAttribute="bottom" constant="8" id="rbU-EK-FUe"/>
+                            <constraint firstItem="jHI-L9-iSr" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="47" id="t5a-io-xJw"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
+                    <connections>
+                        <outlet property="counterButton" destination="gdB-rw-d7E" id="h7Y-Hf-PPh"/>
+                        <outlet property="myPeerIDLabel" destination="4r0-Wt-QEG" id="0tK-xg-e83"/>
+                        <outlet property="theirCounterLabel" destination="jHI-L9-iSr" id="bEI-5f-ACV"/>
+                        <outlet property="theirPeerIDLabel" destination="SYH-sE-PVl" id="GK3-jl-05M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
