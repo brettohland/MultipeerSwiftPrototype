@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A309290319464DF300865050 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A309290219464DF300865050 /* AppDelegate.swift */; };
+		A309290519464DF300865050 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A309290419464DF300865050 /* ViewController.swift */; };
+		A309290819464DF300865050 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A309290619464DF300865050 /* Main.storyboard */; };
+		A309290A19464DF300865050 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A309290919464DF300865050 /* Images.xcassets */; };
+		A309291619464DF300865050 /* MultipeerSwiftPrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A309291519464DF300865050 /* MultipeerSwiftPrototypeTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A309291019464DF300865050 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A30928F519464DF300865050 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A30928FC19464DF300865050;
+			remoteInfo = MultipeerSwiftPrototype;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A30928FD19464DF300865050 /* MultipeerSwiftPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultipeerSwiftPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A309290119464DF300865050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A309290219464DF300865050 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A309290419464DF300865050 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A309290719464DF300865050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A309290919464DF300865050 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A309290F19464DF300865050 /* MultipeerSwiftPrototypeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultipeerSwiftPrototypeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A309291419464DF300865050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A309291519464DF300865050 /* MultipeerSwiftPrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerSwiftPrototypeTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A30928FA19464DF300865050 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A309290C19464DF300865050 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A30928F419464DF300865050 = {
+			isa = PBXGroup;
+			children = (
+				A30928FF19464DF300865050 /* MultipeerSwiftPrototype */,
+				A309291219464DF300865050 /* MultipeerSwiftPrototypeTests */,
+				A30928FE19464DF300865050 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A30928FE19464DF300865050 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A30928FD19464DF300865050 /* MultipeerSwiftPrototype.app */,
+				A309290F19464DF300865050 /* MultipeerSwiftPrototypeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A30928FF19464DF300865050 /* MultipeerSwiftPrototype */ = {
+			isa = PBXGroup;
+			children = (
+				A309290219464DF300865050 /* AppDelegate.swift */,
+				A309290419464DF300865050 /* ViewController.swift */,
+				A309290619464DF300865050 /* Main.storyboard */,
+				A309290919464DF300865050 /* Images.xcassets */,
+				A309290019464DF300865050 /* Supporting Files */,
+			);
+			path = MultipeerSwiftPrototype;
+			sourceTree = "<group>";
+		};
+		A309290019464DF300865050 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A309290119464DF300865050 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A309291219464DF300865050 /* MultipeerSwiftPrototypeTests */ = {
+			isa = PBXGroup;
+			children = (
+				A309291519464DF300865050 /* MultipeerSwiftPrototypeTests.swift */,
+				A309291319464DF300865050 /* Supporting Files */,
+			);
+			path = MultipeerSwiftPrototypeTests;
+			sourceTree = "<group>";
+		};
+		A309291319464DF300865050 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A309291419464DF300865050 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A30928FC19464DF300865050 /* MultipeerSwiftPrototype */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A309291919464DF300865050 /* Build configuration list for PBXNativeTarget "MultipeerSwiftPrototype" */;
+			buildPhases = (
+				A30928F919464DF300865050 /* Sources */,
+				A30928FA19464DF300865050 /* Frameworks */,
+				A30928FB19464DF300865050 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MultipeerSwiftPrototype;
+			productName = MultipeerSwiftPrototype;
+			productReference = A30928FD19464DF300865050 /* MultipeerSwiftPrototype.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A309290E19464DF300865050 /* MultipeerSwiftPrototypeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A309291C19464DF300865050 /* Build configuration list for PBXNativeTarget "MultipeerSwiftPrototypeTests" */;
+			buildPhases = (
+				A309290B19464DF300865050 /* Sources */,
+				A309290C19464DF300865050 /* Frameworks */,
+				A309290D19464DF300865050 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A309291119464DF300865050 /* PBXTargetDependency */,
+			);
+			name = MultipeerSwiftPrototypeTests;
+			productName = MultipeerSwiftPrototypeTests;
+			productReference = A309290F19464DF300865050 /* MultipeerSwiftPrototypeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A30928F519464DF300865050 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = ampersandsoftworks;
+				TargetAttributes = {
+					A30928FC19464DF300865050 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					A309290E19464DF300865050 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = A30928FC19464DF300865050;
+					};
+				};
+			};
+			buildConfigurationList = A30928F819464DF300865050 /* Build configuration list for PBXProject "MultipeerSwiftPrototype" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A30928F419464DF300865050;
+			productRefGroup = A30928FE19464DF300865050 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A30928FC19464DF300865050 /* MultipeerSwiftPrototype */,
+				A309290E19464DF300865050 /* MultipeerSwiftPrototypeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A30928FB19464DF300865050 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A309290819464DF300865050 /* Main.storyboard in Resources */,
+				A309290A19464DF300865050 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A309290D19464DF300865050 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A30928F919464DF300865050 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A309290519464DF300865050 /* ViewController.swift in Sources */,
+				A309290319464DF300865050 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A309290B19464DF300865050 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A309291619464DF300865050 /* MultipeerSwiftPrototypeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A309291119464DF300865050 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A30928FC19464DF300865050 /* MultipeerSwiftPrototype */;
+			targetProxy = A309291019464DF300865050 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A309290619464DF300865050 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A309290719464DF300865050 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A309291719464DF300865050 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A309291819464DF300865050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A309291A19464DF300865050 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = MultipeerSwiftPrototype/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A309291B19464DF300865050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = MultipeerSwiftPrototype/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A309291D19464DF300865050 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MultipeerSwiftPrototype.app/MultipeerSwiftPrototype";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MultipeerSwiftPrototypeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		A309291E19464DF300865050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MultipeerSwiftPrototype.app/MultipeerSwiftPrototype";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MultipeerSwiftPrototypeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A30928F819464DF300865050 /* Build configuration list for PBXProject "MultipeerSwiftPrototype" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A309291719464DF300865050 /* Debug */,
+				A309291819464DF300865050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A309291919464DF300865050 /* Build configuration list for PBXNativeTarget "MultipeerSwiftPrototype" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A309291A19464DF300865050 /* Debug */,
+				A309291B19464DF300865050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A309291C19464DF300865050 /* Build configuration list for PBXNativeTarget "MultipeerSwiftPrototypeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A309291D19464DF300865050 /* Debug */,
+				A309291E19464DF300865050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A30928F519464DF300865050 /* Project object */;
+}
