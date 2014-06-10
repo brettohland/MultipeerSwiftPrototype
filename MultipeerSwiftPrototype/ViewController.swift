@@ -19,95 +19,129 @@ class ViewController: UIViewController, MCNearbyServiceAdvertiserDelegate, MCNea
     let HotColdServiceType = "hotcold-service"
     
     // Optionals
-    var session: MCSession?
+    var localSession: MCSession? = nil
     var advertiser: MCNearbyServiceAdvertiser?
     var browser: MCNearbyServiceBrowser?
     var localPeerID: MCPeerID?
     
     // Set properties
-    var connectedPeers = []
+    var connectedPeers: MCPeerID[] = []
     var buttonCounter = 0
-
-//        - (void)viewDidLoad {
-//    
-//    // Browser for others
-//    self.browser = [[MCNearbyServiceBrowser alloc] initWithPeer:self.localPeerID
-//    serviceType:HotColdServiceType];
-//    self.browser.delegate = self;
-//    
-//    // Advertise to others
-//    self.advertiser = [[MCNearbyServiceAdvertiser alloc] initWithPeer:self.localPeerID
-//    discoveryInfo:nil
-//    serviceType:HotColdServiceType];
-//    self.advertiser.delegate = self;
-//    
-//    }
-
-    
+   
     override func viewDidLoad() {
-        
         myPeerIDLabel.text = ""
         theirPeerIDLabel.text = ""
         theirCounterLabel.text = ""
         counterButton.enabled = false
         
-        //self.localPeerID = [[MCPeerID alloc] initWithDisplayName:[[UIDevice currentDevice] name]];
-        
-        
-        
-//        if let deviceName = UIDevice.currentDevice().name {
-//            localPeerID! = MCPeerID(displayName: deviceName)
-//        }
-//        
-//        // Browser
-//        browser! = MCNearbyServiceBrowser(peer: localPeerID , serviceType: HotColdServiceType)
-//        browser!.delegate = self
-
-        //let myTableView: UITableView = UITableView(frame: CGRectZero, style: .Grouped)
-        
+        localPeerID = MCPeerID(displayName: UIDevice.currentDevice().name)
+        browser = MCNearbyServiceBrowser(peer: localPeerID!, serviceType: HotColdServiceType)
+        browser!.delegate = self
         
         // Advertiser
+        advertiser = MCNearbyServiceAdvertiser(peer: localPeerID!, discoveryInfo: nil, serviceType: HotColdServiceType)
+        advertiser!.delegate = self
         
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        myPeerIDLabel.text = localPeerID!.displayName
+        
+        browser!.startBrowsingForPeers()
+        advertiser!.startAdvertisingPeer()
+        
+        super.viewWillAppear(animated)
+    }
+    
+    func setupSession() -> Void {
+        println("Setting up session")
+        localSession = MCSession(peer: localPeerID!, securityIdentity: nil, encryptionPreference: MCEncryptionPreference.None)
+        localSession!.delegate = self
+    }
+    
+    func enableServices(enable: Bool) -> Void {
+        if(enable){
+            advertiser!.startAdvertisingPeer()
+            browser!.startBrowsingForPeers()
+        } else {
+            advertiser!.stopAdvertisingPeer()
+            browser!.stopBrowsingForPeers()
+        }
+    }
+    
     // MCNearbyServiceAdvertiserDelegate
     func advertiser(advertiser: MCNearbyServiceAdvertiser!, didReceiveInvitationFromPeer peerID: MCPeerID!, withContext context: NSData!, invitationHandler: ((Bool, MCSession!) -> Void)!) {
+        println("Received invitation from \(peerID.displayName)")
         
+        if (!localSession){
+            
+            localSession = MCSession(peer: localPeerID!, securityIdentity: nil, encryptionPreference: MCEncryptionPreference.None)
+            localSession!.delegate = self
+            invitationHandler(true, self.localSession)
+            
+            enableServices(false)
+        }
     }
-
+    
     // MCNearbyServiceBrowserDelegate
     
     func browser(browser: MCNearbyServiceBrowser!, foundPeer peerID: MCPeerID!, withDiscoveryInfo info: NSDictionary!) {
+        println("Found Peer! \(peerID.displayName)")
+        
+        if(!localSession){
+            setupSession()
+            browser.invitePeer(peerID, toSession: localSession, withContext: nil, timeout: 5)
+            
+            enableServices(false)
+        }
     }
     
     func browser(browser: MCNearbyServiceBrowser!, lostPeer peerID: MCPeerID!) {
-    
+        localSession = nil
+        
+        enableServices(true);
     }
     
     // MCSessionDelegate
     func session(session: MCSession!, peer peerID: MCPeerID!, didChangeState state: MCSessionState) {
-    
+        println("State Changed to \(state.toRaw())")
+        if(state == MCSessionState.Connected){
+            println("Connected to \(peerID.displayName)")
+            connectedPeers += peerID
+            dispatch_async(dispatch_get_main_queue(), {
+                self.theirPeerIDLabel.text = peerID.displayName
+                self.counterButton.enabled = true
+            })
+        }
     }
     
     func session(session: MCSession!, didReceiveData data: NSData!, fromPeer peerID: MCPeerID!) {
-    
+        let message = NSString(data: data, encoding: NSUTF8StringEncoding)
+        println("Message received \(message)")
+        dispatch_async(dispatch_get_main_queue(), {
+            self.theirCounterLabel.text = message
+        })
     }
     
     func session(session: MCSession!, didReceiveStream stream: NSInputStream!, withName streamName: String!, fromPeer peerID: MCPeerID!) {
-    
     }
     
     func session(session: MCSession!, didStartReceivingResourceWithName resourceName: String!, fromPeer peerID: MCPeerID!, withProgress progress: NSProgress!) {
-    
     }
     
     func session(session: MCSession!, didFinishReceivingResourceWithName resourceName: String!, fromPeer peerID: MCPeerID!, atURL localURL: NSURL!, withError error: NSError!) {
-    
     }
     
     @IBAction func incrementCounterAndSend(sender : UIButton) {
+        buttonCounter++
+        let data = "\(buttonCounter) times".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+        var error: NSError? = nil
         
+        if (!localSession!.sendData(data, toPeers: connectedPeers, withMode: MCSessionSendDataMode.Reliable, error: &error)){
+            println("ERROR \(error)")
+        }
     }
     
     override func didReceiveMemoryWarning() {
