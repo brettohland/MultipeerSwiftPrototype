@@ -1,5 +1,7 @@
 #Multipeer Swift Prototype
 
+## This has been updated to compile with the final release of Swift.
+
 This code is a rewrite of a Multipeer Prototype I built and blogged about. If you want to read more, here are some links:
 
 - [Swift Multipeer Rewrite](http://ampersandsoftworks.com/swift-multipeer-rewrite/)
