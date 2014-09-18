@@ -10,22 +10,22 @@ import UIKit
 import MultipeerConnectivity
 
 class ViewController: UIViewController, MCNearbyServiceAdvertiserDelegate, MCNearbyServiceBrowserDelegate, MCSessionDelegate {
-    @IBOutlet var myPeerIDLabel : UILabel
-    @IBOutlet var theirPeerIDLabel : UILabel
-    @IBOutlet var theirCounterLabel : UILabel
-    @IBOutlet var counterButton : UIButton
+    @IBOutlet var myPeerIDLabel : UILabel!
+    @IBOutlet var theirPeerIDLabel : UILabel!
+    @IBOutlet var theirCounterLabel : UILabel!
+    @IBOutlet var counterButton : UIButton!
     
     // Constants
     let HotColdServiceType = "hotcold-service"
     
     // Optionals
-    var localSession: MCSession? = nil
+    var localSession: MCSession?
     var advertiser: MCNearbyServiceAdvertiser?
     var browser: MCNearbyServiceBrowser?
     var localPeerID: MCPeerID?
     
     // Set properties
-    var connectedPeers: MCPeerID[] = []
+    var connectedPeers: [MCPeerID] = []
     var buttonCounter = 0
    
     override func viewDidLoad() {
@@ -75,8 +75,8 @@ class ViewController: UIViewController, MCNearbyServiceAdvertiserDelegate, MCNea
     func advertiser(advertiser: MCNearbyServiceAdvertiser!, didReceiveInvitationFromPeer peerID: MCPeerID!, withContext context: NSData!, invitationHandler: ((Bool, MCSession!) -> Void)!) {
         println("Received invitation from \(peerID.displayName)")
         
-        if (!localSession){
-            
+        
+        if (localSession == nil) {
             localSession = MCSession(peer: localPeerID!, securityIdentity: nil, encryptionPreference: MCEncryptionPreference.None)
             localSession!.delegate = self
             invitationHandler(true, self.localSession)
@@ -85,17 +85,23 @@ class ViewController: UIViewController, MCNearbyServiceAdvertiserDelegate, MCNea
         }
     }
     
-    // MCNearbyServiceBrowserDelegate
+    func advertiser(advertiser: MCNearbyServiceAdvertiser!, didNotStartAdvertisingPeer error: NSError!) {
+        // Handle this error more gracefully
+        println("Didn't start advertiser")
+    }
     
-    func browser(browser: MCNearbyServiceBrowser!, foundPeer peerID: MCPeerID!, withDiscoveryInfo info: NSDictionary!) {
+    // MCNearbyServiceBrowserDelegate
+
+    func browser(browser: MCNearbyServiceBrowser!, foundPeer peerID: MCPeerID!, withDiscoveryInfo info: [NSObject : AnyObject]!) {
         println("Found Peer! \(peerID.displayName)")
         
-        if(!localSession){
+        if (localSession == nil) {
             setupSession()
             browser.invitePeer(peerID, toSession: localSession, withContext: nil, timeout: 5)
             
             enableServices(false)
         }
+
     }
     
     func browser(browser: MCNearbyServiceBrowser!, lostPeer peerID: MCPeerID!) {
@@ -109,7 +115,7 @@ class ViewController: UIViewController, MCNearbyServiceAdvertiserDelegate, MCNea
         println("State Changed to \(state.toRaw())")
         if(state == MCSessionState.Connected){
             println("Connected to \(peerID.displayName)")
-            connectedPeers += peerID
+            connectedPeers.append(peerID)
             dispatch_async(dispatch_get_main_queue(), {
                 self.theirPeerIDLabel.text = peerID.displayName
                 self.counterButton.enabled = true
